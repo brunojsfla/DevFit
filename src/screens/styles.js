@@ -72,3 +72,6 @@ export const DaysArea = styled.View`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+export const LevelArea = styled.View`
+  width: 100%;
+`;
