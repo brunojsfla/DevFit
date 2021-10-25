@@ -15,6 +15,14 @@ export const ContainerName = styled.SafeAreaView`
   margin-left: 30px;
   margin-right: 30px;
 `;
+export const ContainerDias = styled.SafeAreaView`
+  flex: 1;
+  align-items: center;
+  background-color: #fff;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+`;
 export const WelcomeText = styled.Text`
   font-size: 22px;
   color: #333;
@@ -41,6 +49,12 @@ export const HeaderText = styled.Text`
   margin-top: 50px;
   margin-bottom: 50px;
 `;
+export const HeaderTextDias = styled.Text`
+  font-size: 15px;
+  color: #333;
+  text-align: center
+  margin-bottom: 50px;
+`;
 export const NameInput = styled.TextInput`
   border: 1px solid #CCC
   width: 100%;
@@ -50,3 +64,11 @@ export const NameInput = styled.TextInput`
   padding: 10px;
 `;
 export const NextButton = styled.Button``;
+export const BoldText = styled.Text`
+  font-weight: bold;
+`;
+export const DaysArea = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
