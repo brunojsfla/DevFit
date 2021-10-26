@@ -75,3 +75,6 @@ export const DaysArea = styled.View`
 export const LevelArea = styled.View`
   width: 100%;
 `;
+export const WorkoutList = styled.FlatList`
+  width: 100%;
+`;
