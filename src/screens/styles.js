@@ -78,3 +78,8 @@ export const LevelArea = styled.View`
 export const WorkoutList = styled.FlatList`
   width: 100%;
 `;
+export const HomeContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
