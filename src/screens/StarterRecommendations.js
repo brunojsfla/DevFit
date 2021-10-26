@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react';
 import {useEffect} from 'react';
 import {StackActions, NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
@@ -14,7 +15,23 @@ import {
 } from './styles';
 
 const Page = props => {
+  const [title, setTitle] = useState('');
+
   useEffect(() => {
+    const num = props.myWorkouts.length;
+
+    switch (num) {
+      case 0:
+        setTitle('Nenhum treino selecionado');
+        break;
+      case 1:
+        setTitle('1 treino selecionado');
+        break;
+      default:
+        setTitle(`${num} treinos selecionados`);
+        break;
+    }
+
     props.navigation.setParams({myWorkouts: props.myWorkouts});
   }, [props.myWorkouts]);
 
@@ -26,29 +43,11 @@ const Page = props => {
     }
   };
 
-  const numberOfTraining = () => {
-    let text = '';
-    const num = props.myWorkouts.length;
-
-    switch (num) {
-      case 0:
-        text = 'Nenhum treino selecionado';
-        break;
-      case 1:
-        text = '1 treino selecionado';
-        break;
-      default:
-        text = `${num} treinos selecionados`;
-    }
-
-    return text;
-  };
-
   return (
     <ContainerDias>
       <HeaderTextDias>Opções de treinos com base no seu nível</HeaderTextDias>
       <HeaderTextDias>
-        <BoldText>{numberOfTraining()}</BoldText>
+        <BoldText>{title}</BoldText>
       </HeaderTextDias>
 
       <WorkoutList
