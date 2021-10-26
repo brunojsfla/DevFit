@@ -30,11 +30,11 @@ const Page = props => {
     let text = '';
     const num = props.myWorkouts.length;
 
-    if (num === 0) text = 'Você não selecionou nenhum treino';
+    if (num === 0) text = 'Nenhum treino selecionado';
 
-    if (num === 1) text = 'Você selecionou 1 treino';
+    if (num === 1) text = '1 treino selecionado';
 
-    if (num > 1) text = `Você selecionou ${num} treinos`;
+    if (num > 1) text = `${num} treinos selecionados`;
 
     return text;
   };
