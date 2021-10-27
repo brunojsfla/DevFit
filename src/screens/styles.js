@@ -8,6 +8,9 @@ export const Container = styled.SafeAreaView`
   margin-left: 30px;
   margin-right: 30px;
 `;
+export const ContainerHome = styled.SafeAreaView`
+  align-items: center;
+`;
 export const ContainerName = styled.SafeAreaView`
   flex: 1;
   align-items: center;
