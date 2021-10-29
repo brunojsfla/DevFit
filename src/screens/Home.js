@@ -5,7 +5,13 @@ import HomeDayStatus from '../components/HomeDayStatus';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
-import {ContainerHome} from './styles';
+import {
+  ContainerHome,
+  Legend,
+  LegendText,
+  LegendItem,
+  LegendBox,
+} from './styles';
 
 const Page = props => {
   return (
@@ -13,6 +19,30 @@ const Page = props => {
       <HomeMonthScroll />
       <HomeDaysScroll />
       <HomeDayStatus />
+
+      <Legend>
+        <LegendText>Legenda:</LegendText>
+        <LegendItem>
+          <LegendBox style={{backgroundColor: '#B5EEFF'}} />
+          <LegendText>Hoje</LegendText>
+        </LegendItem>
+        <LegendItem>
+          <LegendBox style={{backgroundColor: '#B5FFB8'}} />
+          <LegendText>Treino feito</LegendText>
+        </LegendItem>
+        <LegendItem>
+          <LegendBox style={{backgroundColor: '#FFB5B5'}} />
+          <LegendText>Treino perdido</LegendText>
+        </LegendItem>
+        <LegendItem>
+          <LegendBox style={{backgroundColor: '#F4F4F4', opacity: 0.2}} />
+          <LegendText>Dia de descanso</LegendText>
+        </LegendItem>
+        <LegendItem>
+          <LegendBox style={{backgroundColor: '#F4F4F4'}} />
+          <LegendText>Dia futuro</LegendText>
+        </LegendItem>
+      </Legend>
     </ContainerHome>
   );
 };
