@@ -16,6 +16,7 @@ import {
 const Page = props => {
   let today = new Date();
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
+  const [selectedDay, setSelectedDay] = useState(today.getDate());
 
   return (
     <ContainerHome>
@@ -23,10 +24,14 @@ const Page = props => {
         selectedMonth={selectedMonth}
         setSelectedMonth={setSelectedMonth}
       />
-      <HomeDaysScroll />
+      <HomeDaysScroll
+        selectedMonth={selectedMonth}
+        selectedDay={selectedDay}
+        setSelectedDay={setSelectedDay}
+        dailyProgress={props.dailyProgress}
+        workoutDays={props.workoutDays}
+      />
       <HomeDayStatus />
-
-      <LegendText>Mes: {selectedMonth}</LegendText>
 
       <Legend>
         <LegendText>Legenda:</LegendText>
@@ -89,7 +94,10 @@ Page.navigationOptions = ({navigation}) => {
 };
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    dailyProgress: state.userReducer.dailyProgress,
+    workoutDays: state.userReducer.workoutDays,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
