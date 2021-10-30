@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import HomeMonthScroll from '../components/HomeMonthScroll';
 import HomeDaysScroll from '../components/HomeDaysScroll';
 import HomeDayStatus from '../components/HomeDayStatus';
@@ -14,11 +14,19 @@ import {
 } from './styles';
 
 const Page = props => {
+  let today = new Date();
+  const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
+
   return (
     <ContainerHome>
-      <HomeMonthScroll />
+      <HomeMonthScroll
+        selectedMonth={selectedMonth}
+        setSelectedMonth={setSelectedMonth}
+      />
       <HomeDaysScroll />
       <HomeDayStatus />
+
+      <LegendText>Mes: {selectedMonth}</LegendText>
 
       <Legend>
         <LegendText>Legenda:</LegendText>
