@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {StackActions, NavigationActions} from 'react-navigation';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 
@@ -50,6 +51,8 @@ const LevelItem = styled.TouchableHighlight`
 
 const LevelItemText = styled.Text``;
 
+const ResetButton = styled.Button``;
+
 const Page = props => {
   const toogleWorkoutDay = value => {
     let newWorkoutDays = [...props.workoutDays];
@@ -64,6 +67,16 @@ const Page = props => {
     }
 
     props.setWorkoutDays(newWorkoutDays);
+  };
+
+  const resetAction = () => {
+    props.reset();
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({routeName: 'StarterStack'})],
+    });
+
+    props.navigation.dispatch(resetAction);
   };
 
   return (
@@ -158,6 +171,9 @@ const Page = props => {
           <LevelItemText>Avançado</LevelItemText>
         </LevelItem>
       </ListArea>
+
+      <Label>Você quer resetar tudo?</Label>
+      <ResetButton title="Resetar tudo" onPress={resetAction} />
     </ContainerConfig>
   );
 };
@@ -182,6 +198,7 @@ const mapDispatchToProps = dispatch => {
     setWorkoutDays: workoutDays =>
       dispatch({type: 'SET_WORKOUTDAYS', payload: {workoutDays}}),
     setLevel: level => dispatch({type: 'SET_LEVEL', payload: {level}}),
+    reset: () => dispatch({type: 'RESET'}),
   };
 };
 
