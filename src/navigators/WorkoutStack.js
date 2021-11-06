@@ -1,6 +1,8 @@
 import {createStackNavigator} from 'react-navigation-stack';
-import Home from '../screens/Home';
+import WorkoutSelect from '../screens/WorkoutSelect';
+import WorkoutChecklist from '../screens/WorkoutChecklist';
 
 export default createStackNavigator({
-  Home,
+  WorkoutSelect,
+  WorkoutChecklist,
 });

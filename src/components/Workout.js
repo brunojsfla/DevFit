@@ -65,8 +65,13 @@ export default props => {
   const editWorkout = () => {
     props.editAction();
   };
+
   const delWorkout = () => {
     props.delAction();
+  };
+
+  const goWorkout = () => {
+    props.goAction();
   };
 
   return (
@@ -110,6 +115,15 @@ export default props => {
             underlayColor="transparent">
             <WorkoutButtonImage
               source={require('../../assets/trash-black.png')}
+            />
+          </WorkoutButton>
+        )}
+        {props.goAction && (
+          <WorkoutButton
+            onPress={() => goWorkout()}
+            underlayColor="transparent">
+            <WorkoutButtonImage
+              source={require('../../assets/play-black.png')}
             />
           </WorkoutButton>
         )}

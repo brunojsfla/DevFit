@@ -4,13 +4,12 @@ const initialState = {
   workoutDays: [],
   myWorkouts: [],
   lastWorkout: '',
-  dailyProgress: ['2021-10-13', '2021-10-12'],
+  dailyProgress: [],
 };
 
 export default (state = initialState, action) => {
   let myWorkouts = [...state.myWorkouts];
   let dailyProgress = [...state.dailyProgress];
-  console.log({myWorkouts});
 
   switch (action.type) {
     case 'SET_NAME':
@@ -19,6 +18,8 @@ export default (state = initialState, action) => {
       return {...state, workoutDays: action.payload.workoutDays};
     case 'SET_LEVEL':
       return {...state, level: action.payload.level};
+    case 'SET_LASTWORKOUT':
+      return {...state, lastWorkout: action.payload.id};
     case 'ADD_WORKOUT':
       if (myWorkouts.findIndex(i => i.id === action.payload.workout.id) < 0) {
         myWorkouts.push(action.payload.workout);
