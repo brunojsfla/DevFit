@@ -10,6 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
   let myWorkouts = [...state.myWorkouts];
   let dailyProgress = [...state.dailyProgress];
+  console.log({myWorkouts});
 
   switch (action.type) {
     case 'SET_NAME':
@@ -21,6 +22,12 @@ export default (state = initialState, action) => {
     case 'ADD_WORKOUT':
       if (myWorkouts.findIndex(i => i.id === action.payload.workout.id) < 0) {
         myWorkouts.push(action.payload.workout);
+      }
+      return {...state, myWorkouts};
+    case 'EDIT_WORKOUT':
+      let idx = myWorkouts.findIndex(i => i.id === action.payload.workout.id);
+      if (idx > -1) {
+        myWorkouts[idx] = action.payload.workout;
       }
       return {...state, myWorkouts};
     case 'DEL_WORKOUT':

@@ -105,3 +105,58 @@ export const LegendBox = styled.View`
   background-color: #ccc;
   margin-right: 5px;
 `;
+export const ContainerMyWorkouts = styled.SafeAreaView`
+  flex: 1;
+  margin: 20px;
+`;
+export const MyWorkoutList = styled.FlatList`
+  flex: 1;
+  padding: 20px;
+`;
+export const ExercisesArea = styled.View`
+  flex: 1;  
+  margin-top: 20px;
+  padding-top: 20px
+  border-top-width: 1px;
+  border-top-color: #ccc;
+`;
+export const ExercisesList = styled.FlatList`
+  flex: 1;
+  padding-top: 20px;
+`;
+export const ModalLabel = styled.Text`
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+`;
+export const ModalMuscles = styled.ScrollView``;
+export const ModalInput = styled.TextInput`
+  width: 100%;
+  height: 40px;
+  color: #333;
+  border-bottom-width: 1px;
+  border-bottom-color: #ccc;
+`;
+export const ModalMuscle = styled.TouchableHighlight`
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  opacity: ${props => props.opacity};
+`;
+export const ModalMuscleImage = styled.Image`
+  width: 35px;
+  height: 35px;
+`;
+export const ModalExtra = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+`;
+export const ModalExtraItem = styled.View`
+  align-items: center;
+`;
