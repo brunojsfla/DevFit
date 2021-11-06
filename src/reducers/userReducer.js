@@ -43,6 +43,8 @@ export default (state = initialState, action) => {
     case 'DEL_PROGRESS':
       dailyProgress = dailyProgress.filter(i => i !== action.payload.date);
       return {...state, dailyProgress};
+    case 'RESET':
+      return initialState;
   }
 
   return state;
